@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet JS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: #A8DADC;
+        }
+
+        header {
+            background-color: #264653;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            font-family: 'Cascadia Code';
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-logo {
+            height: 70px;
+            margin-right: 100px;
+        }
+
+
+        #map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            position: absolute;
+            top: 15px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 1;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+        }
+
+        .leaflet-tooltip {
+            background-color: #26282a;
+            color: white;
+            border-radius: 4px;
+            padding: 9px;
+            font-size: 13px;
+            font-family: 'Cascadia Code', monospace;
+        }
+
+        .leaflet-popup {
+            color: #264653;
+            border-radius: 4px;
+            padding: 17px;
+            font-size: 13px;
+            font-family: 'Cascadia Code', monospace;
+        }
+
+        .logo-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .back-button-container {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .back-button {
+            background-color: #457B9D;
+            color: white;
+            font-family: 'Cascadia Code';
+            font-size: 14px;
+            border: none;
+            padding: 20px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background-color: #1D3557;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo UGM -->
+    <div class="logo-container">
+        <img src="icon/logo.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Judul Halaman -->
+    <header>
+        <img src="icon/dishub.jpg" alt="Logo" class="header-logo">
+        <h2>SEBARAN HALTE KEWENANGAN PEMERINTAH <br>
+            KABUPATEN SLEMAN, DAERAH ISTIMEWA YOGYAKARTA</h2>
+    </header>
+
+    <!-- Div Peta dengan container -->
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Tombol Kembali ke Menu Awal -->
+    <div class="back-button-container">
+        <button class="back-button" onclick="goToHomePage()">Kembali</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+
+        // Fungsi untuk navigasi ke menu awal
+        function goToHomePage() {
+            window.location.href = "index.html"; // Ganti "index.html" dengan halaman menu awal Anda
+        }
+
+        // Inisialisasi peta
+        var map = L.map("map").setView([-7.683234, 110.388076], 12);
+
+        // Tile Layer Base Map
+        var basemap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        });
+
+        // Menambahkan basemap ke dalam peta
+        basemap.addTo(map);
+
+        // Fungsi untuk memberikan warna berdasarkan nama kecamatan
+        function getColor(kecamatan) {
+            const colors = [
+                '#E63946', '#457B9D', '#1D3557', '#F4A261', '#2A9D8F',
+                '#A8DADC', '#E76F51', '#264653', '#F4E06D', '#F5C6A5'
+            ];
+
+            const index = Math.abs(hashCode(kecamatan)) % colors.length;
+            return colors[index];
+        }
+
+        // Fungsi untuk membuat hash sederhana dari string
+        function hashCode(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = (hash << 5) - hash + char;
+                hash &= hash;
+            }
+            return hash;
+        }
+
+        // GeoJSON HALTE
+        var titik = L.geoJSON(null, {
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    icon: L.icon({
+                        iconUrl: "icon/icon.png",
+                        iconSize: [60, 60],
+                        iconAnchor: [24, 48],
+                        popupAnchor: [0, -70],
+                        tooltipAnchor: [-16, -30],
+                    }),
+                });
+            },
+            onEachFeature: function (feature, layer) {
+                var popup_content = "Halte " + feature.properties.namobj + "<br>" +
+                    "Lokasi: " + feature.properties.alamat;
+
+                layer.on({
+                    click: function (e) {
+                        layer.bindPopup(popup_content).openPopup();
+                    },
+                    mouseover: function (e) {
+                        layer.bindTooltip(feature.properties.namobj, {
+                            direction: "right",
+                            sticky: true,
+                        }).openTooltip();
+                    },
+                });
+            },
+        });
+
+        $.getJSON("DATA/halte.geojson", function (DATA) {
+            titik.addData(DATA);
+            map.addLayer(titik);
+        });
+
+        // GeoJSON Polyline Jalan
+        map.createPane('paneJalan');
+        map.getPane("paneJalan").style.zIndex = 401;
+        var jalan = L.geoJSON(null, {
+            pane: 'paneJalan',
+            style: function (feature) {
+                return {
+                    color: "red",
+                    opacity: 1,
+                    weight: 3,
+                };
+            },
+            onEachFeature: function (feature, layer) {
+                var popup_content = "Jenis: " + feature.properties.REMARK;
+
+                layer.on({
+                    click: function (e) {
+                        layer.bindPopup(popup_content).openPopup();
+                    },
+                    mouseover: function (e) {
+                        layer.bindTooltip(feature.properties.REMARK, {
+                            direction: "auto",
+                            sticky: true,
+                        }).openTooltip();
+                    },
+                });
+            },
+        });
+
+        $.getJSON("DATA/jalan.geojson", function (data) {
+            jalan.addData(data);
+            map.addLayer(jalan);
+        });
+
+        // GeoJSON Polygon Sleman dengan warna berdasarkan nama kecamatan
+        var Sleman = L.geoJSON(null, {
+            style: function (feature) {
+                return {
+                    color: getColor(feature.properties.KECAMATAN),
+                    weight: 2,
+                    fillOpacity: 0.7,
+                };
+            },
+            onEachFeature: function (feature, layer) {
+                var popup_content = "Kecamatan: " + feature.properties.KECAMATAN + "<br>" +
+                    "Desa: " + feature.properties.DESA;
+
+                layer.bindPopup(popup_content);
+            },
+        });
+
+        $.getJSON("data/Sleman.geojson", function (data) {
+            Sleman.addData(data);
+            map.addLayer(Sleman);
+        });
+
+        // Layer Batas Administrasi Desa
+        var wmsLayer1 = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+            layers: "pg_web:514595_SLEMAN", // Ganti sesuai nama layer GeoServer Anda
+            transparent: true,
+            format: "image/png",
+        });
+
+        // Kontrol Layer
+        var baseMaps = {
+            "OpenStreetMap": basemap,
+        };
+
+        var overlayMaps = {
+            "Halte": titik,
+            "Jalan": jalan,
+            "Sleman": Sleman,
+        };
+
+        var controllayer = L.control.layers(baseMaps, overlayMaps);
+        controllayer.addTo(map);
+    </script>
+</body>
+
+</html>

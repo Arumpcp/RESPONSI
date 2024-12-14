@@ -1,0 +1,127 @@
+<head>
+  <style>
+    /* Body Styling */
+    body {
+      font-family: 'Cascadia Code', monospace;
+      background-color: #c5d6e1;
+      color: #431010;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #264653;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-family: 'Cascadia Code';
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    /* Menu Section */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      width: 100%;
+      max-width: 2000px;
+      text-align: center;
+      word-wrap: break-word;
+      margin: 50px auto;
+      gap: 30px;
+    }
+
+    .menu-item {
+      background: #2c4d7b;
+      border: 3px solid #ffffff;
+      border-radius: 10px;
+      padding: 40px;
+      width: 20%;
+      box-shadow: 6px 6px 20px #2c4d7b;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 350px;
+      box-sizing: border-box;
+    }
+
+    .menu-item h2 {
+      text-align: center;
+      color: #ffffff;
+      margin: 0 0 20px 0;
+      padding: 0;
+    }
+
+    .menu-item p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .menu-item .btn {
+      text-decoration: none;
+      background-color: #c5d6e1;
+      color: rgb(0, 0, 0);
+      padding: 10px 10px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .menu-item .btn:hover {
+      background-color: #457B9D;
+    }
+
+    /* Tombol Kembali */
+    .back-btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 20px 30px;
+      background-color: #457B9D;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #c5d6e1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Judul Halaman -->
+  <header>
+    <h2> SUMBER DATA </h2>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <div class="menu-item">
+      <h2>DINAS PERHUBUNGAN SLEMAN</h2>
+      <p>Berikan laporan anda mengenai Halte untuk ditinjak lanjuti leh Dinas Perhubungan Sleman.</p>
+      <a href="https://perhubungan.slemankab.go.id/" class="btn">Selengkapnya</a>
+    </div>
+    <div class="menu-item">
+      <h2>GEOPORTAL</h2>
+      <p>Persebaran halte di seluruh Sleman yang wewenangnya dipegang oleh Dinas Perhubungan Sleman.</p>
+      <a href="https://geoportal.slemankab.go.id/" class="btn">Selengkapnya</a>
+    </div>
+    <div class="menu-item">
+      <h2>DINAS PERHUBUNGAN DAERAH ISTIMEWA YOGYAKARTA</h2>
+      <p>Seluruh aduan yang diterima pada formulir pengaduan dapat diakses disini, untuk nantinya ditindak lanjut oleh
+        Dinas Perhubungan Sleman.</p>
+      <a href="https://dishub.jogjaprov.go.id/trans-jogja" class="btn">Selengkapnya</a>
+    </div>
+  </section>
+
+  <!-- Tombol Kembali ke Halaman Utama -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="index.html" class="back-btn">Tutup</a>
+  </div>
+</body>

@@ -1,0 +1,285 @@
+{
+    "type": "FeatureCollection",
+    "name": "halte",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 1,
+                "objectid": 1.0,
+                "fcode": null,
+                "namobj": "Pengadilan Sleman",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl. KRT Pringgodiningrat",
+                "tahun": "2015"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.358414624055044,
+                    -7.720963697471959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 2,
+                "objectid": 3.0,
+                "fcode": null,
+                "namobj": "SMKN 1 Depok",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Raya Tajem/Jl Stadion",
+                "tahun": "2015"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.431469092600267,
+                    -7.765231981910901
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 3,
+                "objectid": 4.0,
+                "fcode": null,
+                "namobj": "Pangukan",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl KRT Pringgodiningrat",
+                "tahun": "2016"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.344286090428497,
+                    -7.71593898772189
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 4,
+                "objectid": 6.0,
+                "fcode": null,
+                "namobj": "RS Mitra Paramedika",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Raya Ngemplak",
+                "tahun": "2016"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.447802088950866,
+                    -7.713729981629202
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 5,
+                "objectid": 7.0,
+                "fcode": null,
+                "namobj": "Pasar Sleman 1",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Dr Radjimin",
+                "tahun": "2017"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.348585089397432,
+                    -7.701774987825349
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 6,
+                "objectid": 9.0,
+                "fcode": null,
+                "namobj": "SMPN 1 Sleman",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Magelang",
+                "tahun": "2017"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.339745088430377,
+                    -7.683423988805564
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 7,
+                "objectid": 10.0,
+                "fcode": null,
+                "namobj": "SMPN 1 Godean",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Jae Sumantoro",
+                "tahun": "2018"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.290939094170241,
+                    -7.7624639905011
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 8,
+                "objectid": 11.0,
+                "fcode": null,
+                "namobj": "SMPN 2 Sleman",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Magelang",
+                "tahun": "2018"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.342865089161421,
+                    -7.68998198817296
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 9,
+                "objectid": 12.0,
+                "fcode": null,
+                "namobj": "SMPN 1 Mlati",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl Sidomoyo/Jl Cebongan",
+                "tahun": "2019"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.323152092541648,
+                    -7.741606989055118
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 10,
+                "objectid": 2.0,
+                "fcode": null,
+                "namobj": "Simpang Pasar Jangkang",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl. Besi Jangkang",
+                "tahun": "2023"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.447373388557068,
+                    -7.702084681131963
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 11,
+                "objectid": 5.0,
+                "fcode": null,
+                "namobj": "Kalurahan Wedomartani",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl. Raya Tajem",
+                "tahun": "2023"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.434833090425926,
+                    -7.731285481669496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 12,
+                "objectid": 8.0,
+                "fcode": null,
+                "namobj": "SDN Selorejo",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl. Besi Jangkang",
+                "tahun": "2023"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.434717288943858,
+                    -7.704863082178921
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ogc_fid": 13,
+                "objectid": 13.0,
+                "fcode": null,
+                "namobj": "MAN 2 Sleman",
+                "metadata": "0069_HALTE-KEWENANGAN-PEMKAB_5K",
+                "srs_id": "SRGI2013",
+                "remark": null,
+                "alamat": "Jl. Raya Tajem",
+                "tahun": "2023"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.434921991839957,
+                    -7.750507481183275
+                ]
+            }
+        }
+    ]
+}

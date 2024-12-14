@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> WebGIS Halte Sleman</title>
+  <style>
+    /* Smooth Scroll for the entire page */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Reset */
+    body,
+    h1,
+    h2,
+    p,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Cascadia Code', monospace;
+      background-color: #c5d6e1;
+      color: #431010;
+      line-height: 1.6;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #457B9D;
+      padding: 30px 35px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgb(255, 255, 255);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      list-style: none;
+    }
+
+    .navbar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Cascadia Code', monospace;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 17px 25px;
+      border-radius: 30px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #e0f7fa;
+      color: #E63946;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      font-family: 'Cascadia Code', monospace;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .modal-content img {
+      width: 100px;
+      height: auto;
+      border-radius: 50px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content .text-content {
+      flex: 1;
+    }
+
+    .modal-content h1 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #457B9D;
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .modal-content a {
+      color: #457B9D;
+      text-decoration: none;
+    }
+
+    .modal-content button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1D3557;
+      color: white;
+      font-family: 'Cascadia Code', monospace;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #457B9D;
+    }
+
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+    }
+
+    /* Menu Section */
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 1200px;
+      gap: 30px;
+    }
+
+    .menu-item {
+      background: #f8c9a7;
+      border: 3px solid #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 calc(33.33% - 30px);
+      max-width: calc(33.33% - 30px);
+      box-shadow: 6px 6px 20px #ffb7b7;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 300px;
+    }
+
+    .menu-item h2 {
+      color: #2c4d7b;
+      margin-bottom: 10px;
+      font-family: 'Cascadia Code', monospace;
+      font-size: 1.5rem;
+    }
+
+    .menu-item p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-family: 'Cascadia Code', monospace;
+      color: #000;
+    }
+
+    .menu-item .btn {
+      text-decoration: none;
+      background-color: #1a3d6e;
+      color: white;
+      padding: 10px 20px;
+      font-family: 'Cascadia Code', monospace;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .menu-item .btn:hover {
+      background-color: #457B9D;
+    }
+
+    /*FOTO*/
+    .galeri-container {
+      display: flex;
+      justify-content: center;  /* Center the gallery */
+      gap: 10px; /* Space between images */
+      flex-wrap: wrap; /* Allow the images to wrap to the next line */
+      margin: 20px 0;
+    }
+
+    .galeri {
+      display: flex;
+      gap: 10px; /* Add gap between images */
+      flex-wrap: wrap;
+      justify-content: center; /* Center the images */
+    }
+
+    .galeri img {
+      width: 100%; 
+      max-width: 300px; 
+      height: auto; 
+      border-radius: 10px; /* radius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Mnegatur shadow */
+      transition: transform 0.3s; /* hover efek */
+    }
+
+    .galeri img:hover {
+      transform: scale(1.05); /* Optional: enlarge image when hovered */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1D3557;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .footer-content div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    footer h3 {
+      margin-top: 20px;
+      font-family:  'Cascadia Code', monospace;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-family:  'Lucida Sans';
+      color: #e0f7fa;
+    }
+
+    footer .footer-bottom {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add an element with id="home" for scrolling -->
+  <div id="home"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="icon/logo2.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="about.html">SUMBER DATA</a></li>
+      <li><a href="#contact" onclick="showModal()">INFO</a></li>
+    </ul>
+  </nav>
+
+  <!-- Modal Navbar Contact -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+      <img src="profil.jpg" alt="Foto Profil">
+      <div class="text-content">
+        <h1>INFO</h1>
+        <p><strong>Nama:</strong> Arum Pradana</p>
+        <p><strong>NIM:</strong> 23/214595/SV/22387</p>
+        <p><strong>Nomor:</strong> 0813578647814</p>
+        <p><strong>Github:</strong> <a href="https://github.com/Arumpcp" target="_blank">github.com/ARUM</a></p>
+        <button onclick="hideModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the modal
+    function showModal() {
+      document.getElementById('modal-overlay').style.display = 'flex';
+    }
+
+    // Function to hide the modal
+    function hideModal() {
+      document.getElementById('modal-overlay').style.display = 'none';
+    }
+  </script>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <div class="menu-item">
+      <h2>PENGADUAN</h2>
+      <p>Berikan laporan anda mengenai Halte untuk ditindak lanjuti oleh Dinas Perhubungan Sleman.</p>
+      <a href="form-ulasan.php" class="btn">Selengkapnya</a>
+    </div>
+    <div class="menu-item">
+      <h2>SEBARAN HALTE</h2>
+      <p>Persebaran halte di seluruh Sleman yang wewenangnya dipegang oleh Dinas Perhubungan Sleman.</p>
+      <a href="persebaran.html" class="btn">Selengkapnya</a>
+    </div>
+    <div class="menu-item">
+      <h2>DATA PENGADUAN</h2>
+      <p>Seluruh aduan yang diterima pada formulir pengaduan dapat diakses disini, untuk nantinya ditindak lanjut oleh
+        Dinas Perhubungan Sleman.</p>
+      <a href="tampil-ulasan.php" class="btn">Selengkapnya</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <div class="galeri-container">
+    <div class="galeri">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.png" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="location">
+        <h3>Sekolah Vokasi, Universitas Gadjah Mada</h3>
+        <p>Gedung TILC, Caturtunggal, Depok, Sleman, Daerah Istimewa Yogyakarta</p>
+      </div>
+      <div class="Support">
+        <h3>Support By</h3>
+        <p>Dinas Perhubungan Sleman</p>
+        <p>Dinas Perhubungan Daerah Istimewa Yogyakarta</p>
+        <p>WhatsApp: 0800-1111-0000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 ARUM PRADANA CAHYANI PUTRI</p>
+      <p> Universitas Gadjah Mada</p>
+      <p><a href="#home">Back to Top</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>
