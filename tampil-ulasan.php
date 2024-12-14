@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Ulasan</title>
+  <title>Data Pengaduan</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -62,6 +62,7 @@
 
     .review p {
       margin: 5px 0;
+      font-family:  'Lucida Sans';
       color:rgb(3, 3, 3);
     }
 
