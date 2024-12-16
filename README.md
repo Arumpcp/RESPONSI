@@ -7,7 +7,7 @@ Website dibuat untuk memberikan informasi persebaran halte di area Sleman, dari 
 
 ## Komponen Pembangun
 Website ini dibuat dengan data halte Sleman dengan wewenang Dinas Perhubungan Sleman yang didapatkan dari laman **geoportal** Sleman. Data tersebut dikembangkan dengan berbagai komponen dan fitur untuk kumpulan data dari database **phpmyAdmin**,  visualisasi data dengan menggunakan **GeoJSON**. Serta penggunaan library **JavaScript** untuk menggunakan fitur aksi.  
-Implementasi style untuk memberikan interaktif dan variasi webGIS didapatkan dari **leaflet**.
+Implementasi style untuk memberikan interaktif dan variasi webGIS didapatkan dari fungsionalitas **leaflet** dan **bootstrap**.
 
 ## Sumber Data
 Dinas Perhubungan DIY [https://dishub.jogjaprov.go.id/trans-jogja](https://dishub.jogjaprov.go.id/trans-jogja)
