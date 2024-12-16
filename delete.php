@@ -10,9 +10,9 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Memastikan ID valid
-    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-        $id = $_GET['id'];
+        // Memastikan ID valid
+        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+            $id = $_GET['id'];
 
         // Persiapkan query untuk menghapus data berdasarkan ID
         $stmt = $pdo->prepare("DELETE FROM halte WHERE id = :id");
