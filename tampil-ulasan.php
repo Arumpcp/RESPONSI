@@ -7,7 +7,7 @@
   <title>Data Pengaduan</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Cascadia Code', monospace;
       background-color: #c5d6e1;
       color: #333;
       padding: 20px;
@@ -36,13 +36,13 @@
     h1 {
       text-align: center;
       color:rgb(255, 255, 255);
-      font-family: 'Cascadia Code', monospace;;
+      font-family: 'Cascadia Code', monospace;
     }
 
     h2 {
       text-align: center;
       color:rgb(255, 255, 255);
-      font-family: 'Cascadia Code', monospace;;
+      font-family: 'Cascadia Code', monospace;
     }
 
     .review {
@@ -77,6 +77,7 @@
       color: white;
       padding: 15px 25px;
       text-decoration: none;
+      font-family: 'Lucida Sans', monospace;
       border-radius: 5px;
       border-color:rgb(255, 255, 255);
       text-align: center;
@@ -126,7 +127,7 @@
     ?>
 
     <!-- Tombol Kembali ke Menu Awal -->
-    <a href="index.html" class="btn">Kembali ke Menu Awal</a>
+    <a href="index.html" class="btn">Tutup</a>
 
   </div>
 </body>

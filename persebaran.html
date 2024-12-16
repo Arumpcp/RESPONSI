@@ -82,12 +82,38 @@
             z-index: 1000;
         }
 
+         /* button selengkapnya */
         .logo {
             height: 100px;
             width: auto;
             border-radius: 4px;
         }
 
+
+        .tabel-button-container {
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .tabel-button {
+            background-color: #457B9D;
+            color: white;
+            font-family: 'Cascadia Code';
+            font-size: 14px;
+            border: none;
+            padding: 20px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabel-button:hover {
+            background-color: #1D3557;
+        }
+
+        /* button kembali */
         .back-button-container {
             position: fixed;
             bottom: 40px;
@@ -101,7 +127,7 @@
             font-family: 'Cascadia Code';
             font-size: 14px;
             border: none;
-            padding: 20px 20px;
+            padding: 20px 48px;
             border-radius: 10px;
             cursor: pointer;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -131,9 +157,14 @@
         <div id="map"></div>
     </div>
 
+     <!-- Tombol ketabel -->
+     <div class="tabel-button-container">
+        <a href="tabel.php" class="tabel-button">Selengkapnya</a>
+    </div>
+
     <!-- Tombol Kembali ke Menu Awal -->
     <div class="back-button-container">
-        <button class="back-button" onclick="goToHomePage()">Kembali</button>
+        <button class="back-button" onclick="goToHomePage()">Tutup</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -216,7 +247,7 @@
             map.addLayer(titik);
         });
 
-        // GeoJSON Polyline Jalan
+        // GeoJSON  Jalan
         map.createPane('paneJalan');
         map.getPane("paneJalan").style.zIndex = 401;
         var jalan = L.geoJSON(null, {

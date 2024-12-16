@@ -182,7 +182,7 @@
         </form>
 
         <!-- Tombol Kembali ke Menu Awal -->
-        <a href="index.html" class="btn back-btn">Kembali</a>
+        <a href="index.html" class="btn back-btn">Tutup</a>
     </div>
 </body>
 
