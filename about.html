@@ -1,127 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUMBER DATA</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    /* Body Styling */
     body {
       font-family: 'Cascadia Code', monospace;
       background-color: #c5d6e1;
       color: #431010;
-      line-height: 1.6;
     }
 
     header {
       background-color: #264653;
-      padding: 20px;
       color: white;
-      text-align: center;
-      font-family: 'Cascadia Code';
-      max-width: 100%;
+      padding: 20px;
       border-radius: 10px;
-      margin: 0 auto;
-    }
-
-    /* Menu Section */
-    .menu {
-      display: flex;
-      justify-content: space-around;
-      align-items: stretch;
-      width: 100%;
-      max-width: 2000px;
       text-align: center;
-      word-wrap: break-word;
-      margin: 50px auto;
-      gap: 30px;
+      margin: 20px auto;
+      width: 100%;
     }
 
     .menu-item {
       background: #2c4d7b;
       border: 3px solid #ffffff;
       border-radius: 10px;
-      padding: 40px;
-      width: 20%;
-      box-shadow: 6px 6px 20px #2c4d7b;
+      padding: 20px;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 350px;
-      box-sizing: border-box;
+      color: #ffffff;
+      box-shadow: 6px 6px 20px #2c4d7b;
+      height: 100%;
     }
 
     .menu-item h2 {
-      text-align: center;
-      color: #ffffff;
-      margin: 0 0 20px 0;
-      padding: 0;
+      margin-bottom: 20px;
     }
 
     .menu-item p {
-      font-size: 14px;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .menu-item .btn {
-      text-decoration: none;
+    /*Button Selengkapnya*/
+    .btn-custom {
       background-color: #c5d6e1;
-      color: rgb(0, 0, 0);
-      padding: 10px 10px;
+      color: black;
       border-radius: 10px;
-      transition: background-color 0.3s;
+      transition: background-color 0.2s;
     }
 
-    .menu-item .btn:hover {
+    .btn-custom:hover {
       background-color: #457B9D;
     }
 
-    /* Tombol Kembali */
+      /*Button Tutup*/
     .back-btn {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 20px 30px;
       background-color: #457B9D;
       color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 14px;
+      width: 60%;
       transition: background-color 0.3s;
     }
 
     .back-btn:hover {
       background-color: #c5d6e1;
+      color: black;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Judul Halaman -->
+  <!-- Header Section -->
   <header>
-    <h2> SUMBER DATA </h2>
+    <h2>SUMBER DATA</h2>
   </header>
 
   <!-- Menu Section -->
-  <section class="menu">
-    <div class="menu-item">
-      <h2>DINAS PERHUBUNGAN SLEMAN</h2>
-      <p>Berikan laporan anda mengenai Halte untuk ditinjak lanjuti leh Dinas Perhubungan Sleman.</p>
-      <a href="https://perhubungan.slemankab.go.id/" class="btn">Selengkapnya</a>
-    </div>
-    <div class="menu-item">
-      <h2>GEOPORTAL</h2>
-      <p>Persebaran halte di seluruh Sleman yang wewenangnya dipegang oleh Dinas Perhubungan Sleman.</p>
-      <a href="https://geoportal.slemankab.go.id/" class="btn">Selengkapnya</a>
-    </div>
-    <div class="menu-item">
-      <h2>DINAS PERHUBUNGAN DAERAH ISTIMEWA YOGYAKARTA</h2>
-      <p>Seluruh aduan yang diterima pada formulir pengaduan dapat diakses disini, untuk nantinya ditindak lanjut oleh
-        Dinas Perhubungan Sleman.</p>
-      <a href="https://dishub.jogjaprov.go.id/trans-jogja" class="btn">Selengkapnya</a>
+  <section class="container my-4">
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="menu-item">
+          <h2>DINAS PERHUBUNGAN SLEMAN</h2>
+          <p>Berikan laporan anda mengenai Halte untuk ditinjak lanjuti oleh Dinas Perhubungan Sleman.</p>
+          <a href="https://perhubungan.slemankab.go.id/" class="btn btn-custom">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="menu-item">
+          <h2>GEOPORTAL</h2>
+          <p>Persebaran halte di seluruh Sleman yang wewenangnya dipegang oleh Dinas Perhubungan Sleman.</p>
+          <a href="https://geoportal.slemankab.go.id/" class="btn btn-custom">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="menu-item">
+          <h2>DINAS PERHUBUNGAN DIY</h2>
+          <p>Seluruh aduan yang diterima pada formulir pengaduan dapat diakses disini, untuk nantinya ditindaklanjuti oleh Dinas Perhubungan Sleman.</p>
+          <a href="https://dishub.jogjaprov.go.id/trans-jogja" class="btn btn-custom">Selengkapnya</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Tombol Kembali ke Halaman Utama -->
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="index.html" class="back-btn">Tutup</a>
+  <!-- Back Button -->
+  <div class="text-center my-4">
+    <a href="index.html" class="btn back-btn">Tutup</a>
   </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
