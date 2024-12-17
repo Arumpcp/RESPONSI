@@ -112,8 +112,8 @@ try {
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                transition: background-color 0.2s ease;
-            ">Tutup</button>
+                transition: background-color 0.1s ease;
+                ">Tutup</button>
         </div>
 
         </div>
